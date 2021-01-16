@@ -521,7 +521,7 @@ class _DayItem extends StatelessWidget {
     this.dayNameColor,
   }) : super(key: key);
 
-  final double height = 70.0;
+  final double height = 75.0;
   final double width = 60.0;
 
   ///? I united both widgets to increase the touch target of non selected days by using a transparent box decorator.
@@ -532,11 +532,11 @@ class _DayItem extends StatelessWidget {
             ? dayColor ?? Theme.of(context).accentColor
             : dayColor?.withOpacity(0.5) ??
                 Theme.of(context).accentColor.withOpacity(0.5),
-        fontSize: fontSize,
+        fontSize: 32,
         fontWeight: FontWeight.normal);
     final selectedStyle = TextStyle(
       color: activeDayColor ?? Colors.white,
-      fontSize: 32,
+      fontSize: fontSize,
       fontWeight: FontWeight.bold,
       height: 0.8,
     );
