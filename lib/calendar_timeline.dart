@@ -24,6 +24,7 @@ class CalendarTimeline extends StatefulWidget {
   final Color dotsColor;
   final Color dayNameColor;
   final String locale;
+  final double dayTextSize;
 
   /// If true, it will show a separate row for the years.
   /// It defaults to false
@@ -44,7 +45,7 @@ class CalendarTimeline extends StatefulWidget {
     this.dotsColor,
     this.dayNameColor,
     this.locale,
-    this.showYears = false,
+    this.showYears = false, this.dayTextSize,
   })  : assert(initialDate != null),
         assert(firstDate != null),
         assert(lastDate != null),
@@ -146,6 +147,7 @@ class _CalendarTimelineState extends State<CalendarTimeline> {
           return Row(
             children: <Widget>[
               _DayItem(
+                fontSize: widget.dayTextSize,
                 isSelected: _daySelectedIndex == index,
                 dayNumber: currentDay.day,
                 shortName: shortName.length > 3
