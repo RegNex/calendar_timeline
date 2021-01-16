@@ -502,6 +502,7 @@ class _DayItem extends StatelessWidget {
   final bool available;
   final Color dotsColor;
   final Color dayNameColor;
+  final double fontSize;
 
   const _DayItem({
     Key key,
@@ -509,6 +510,7 @@ class _DayItem extends StatelessWidget {
     @required this.shortName,
     @required this.isSelected,
     @required this.onTap,
+    this.fontSize = 32,
     this.dayColor,
     this.activeDayColor,
     this.activeDayBackgroundColor,
@@ -528,7 +530,7 @@ class _DayItem extends StatelessWidget {
             ? dayColor ?? Theme.of(context).accentColor
             : dayColor?.withOpacity(0.5) ??
                 Theme.of(context).accentColor.withOpacity(0.5),
-        fontSize: 32,
+        fontSize: fontSize,
         fontWeight: FontWeight.normal);
     final selectedStyle = TextStyle(
       color: activeDayColor ?? Colors.white,
